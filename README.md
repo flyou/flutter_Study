@@ -59,7 +59,7 @@
 
 ***关注公众号及时收到新文章推送***
 
-**微信公众号：**Flutter_Developers
+**微信公众号：** Flutter_Developers
 
 
 ![](http://ww3.sinaimg.cn/large/0060lm7Tly1fpsiognb3jg308c0axx3o.gif)
