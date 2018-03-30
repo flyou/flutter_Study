@@ -31,9 +31,9 @@
 
 **2018.03.13** [Container](http://flutter.link/2018/03/13/Container/)
 
-**2018.03.14** [http://Layout](http://flutter.link/2018/03/13/Layout/)
+**2018.03.14** [Layout](http://flutter.link/2018/03/13/Layout/)
 
-**2018.03.15** [http://Layout（2）](http://flutter.link/2018/03/15/Layout(2)/)
+**2018.03.15** [Layout（2）](http://flutter.link/2018/03/15/Layout(2)/)
 
 **2018.03.20** [Scaffold](http://flutter.link/2018/03/20/Scaffold/)
 
