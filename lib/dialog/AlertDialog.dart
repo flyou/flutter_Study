@@ -17,16 +17,18 @@ class MyApp extends StatelessWidget {
                 onPressed: () {
                   showDialog(
                       context: context,
-                      child: new AlertDialog(
-                        content: new Text("我是AlertDialog"),
-                        actions: <Widget>[
-                          new FlatButton(
-                              onPressed: () {
-                                Navigator.pop(context);
-                              },
-                              child: new Text('确定'))
-                        ],
-                      ));
+                      builder: (BuildContext context){
+                        return new AlertDialog(
+                          content: new Text("我是AlertDialog"),
+                          actions: <Widget>[
+                            new FlatButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: new Text('确定'))
+                          ],
+                        );
+                      });
                 },
                 child: new Text("Dialog出来"),
                 color: Colors.blue,

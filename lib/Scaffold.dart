@@ -15,8 +15,7 @@ class MyApp extends StatelessWidget {
         automaticallyImplyLeading: true,
         title: new Text("AppBar"),
         elevation: 10.0,
-        centerTitle: true,
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.blueAccent,
       ),
       floatingActionButton: new MyFloatActionButton(),
       drawer: new Drawer(
@@ -62,7 +61,7 @@ class MyApp extends StatelessWidget {
           new BottomNavigationBarItem(
               icon: new Icon(Icons.person), title: new Text("我的")),
         ],
-        fixedColor: Colors.red,
+        fixedColor: Colors.blueAccent,
         currentIndex: 1,
       ),
     );

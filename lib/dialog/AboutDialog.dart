@@ -17,12 +17,14 @@ class MyApp extends StatelessWidget {
                 onPressed: () {
                   showDialog(
                       context: context,
-                      child: new AboutDialog(
-                        applicationName: "最佳助手：",
-                        applicationVersion: "V1.0",
-                        applicationIcon: new Icon(Icons.android,color: Colors.blueAccent,),
-                        children: <Widget>[new Text("更新摘要\n新增飞天遁地功能\n优化用户体验")],
-                      ));
+                      builder: (BuildContext context){
+                     return   new AboutDialog(
+                          applicationName: "最佳助手：",
+                          applicationVersion: "V1.0",
+                          applicationIcon: new Icon(Icons.android,color: Colors.blueAccent,),
+                          children: <Widget>[new Text("更新摘要\n新增飞天遁地功能\n优化用户体验")],
+                        );
+                      });
                 },
                 child: new Text("Dialog出来"),
                 color: Colors.blue,
