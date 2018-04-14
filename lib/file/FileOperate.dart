@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 
 void main() {
-  runApp(new MaterialApp(home: new MyApp()));
+  runApp(new MaterialApp(home:  MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -36,19 +36,19 @@ class MyApp extends StatelessWidget {
     }
 
     return new Builder(builder: (BuildContext context) {
-      return new Scaffold(
-        appBar: new AppBar(
-          title: new Text("FileOperator"),
+      return  Scaffold(
+        appBar:  AppBar(
+          title:  Text("FileOperator"),
         ),
         body: new Center(
-          child: new Builder(builder: (BuildContext context) {
-            return new Column(
+          child:  Builder(builder: (BuildContext context) {
+            return  Column(
               children: <Widget>[
                 new TextField(
                   controller: _userNameController,
-                  decoration: new InputDecoration(
-                      contentPadding: const EdgeInsets.only(top: 10.0),
-                      icon: new Icon(Icons.perm_identity),
+                  decoration:  InputDecoration(
+                      contentPadding:  EdgeInsets.only(top: 10.0),
+                      icon:  Icon(Icons.perm_identity),
                       labelText: "请输入用户名",
                       helperText: "注册时填写的名字"),
                 ),
@@ -58,7 +58,7 @@ class MyApp extends StatelessWidget {
                     onPressed: () {
                       save(_userNameController.text.toString());
                       Scaffold.of(context).showSnackBar(
-                          new SnackBar(content: new Text("数据存储成功")));
+                           SnackBar(content:  Text("数据存储成功")));
                     }),
                 RaisedButton(
                     color: Colors.greenAccent,
@@ -67,7 +67,7 @@ class MyApp extends StatelessWidget {
                       Future<String> userName = get();
                       userName.then((String userName) {
                         Scaffold.of(context).showSnackBar(
-                            new SnackBar(content: Text("数据获取成功：$userName")));
+                             SnackBar(content: Text("数据获取成功：$userName")));
                       });
                     }),
               ],

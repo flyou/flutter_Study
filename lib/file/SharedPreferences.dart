@@ -24,25 +24,25 @@ class MyApp extends StatelessWidget {
       var userName;
 
         SharedPreferences prefs = await SharedPreferences.getInstance();
-         userName = prefs.getString(mUserName);
+         userName =  prefs.getString(mUserName);
       return userName;
     }
 
     return new Builder(builder: (BuildContext context) {
       return new Scaffold(
-        appBar: new AppBar(
-          title: new Text("SharedPreferences"),
+        appBar:  AppBar(
+          title:  Text("SharedPreferences"),
         ),
-        body: new Center(
+        body:  Center(
           child: new Builder(builder: (BuildContext context){
             return
                 Column(
                   children: <Widget>[
                      TextField(
                       controller: _userNameController,
-                      decoration: new InputDecoration(
+                      decoration:  InputDecoration(
                           contentPadding: const EdgeInsets.only(top: 10.0),
-                          icon: new Icon(Icons.perm_identity),
+                          icon:  Icon(Icons.perm_identity),
                           labelText: "请输入用户名",
                           helperText: "注册时填写的名字"),
                     ),
@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
                         onPressed: () {
                           save();
                           Scaffold.of(context).showSnackBar(
-                              new SnackBar(content: new Text("数据存储成功")));
+                              new SnackBar(content:  Text("数据存储成功")));
                         }),
                     RaisedButton(
                         color: Colors.greenAccent,
@@ -61,7 +61,7 @@ class MyApp extends StatelessWidget {
                           Future<String> userName = get();
                           userName.then((String userName) {
                             Scaffold.of(context).showSnackBar(
-                                new SnackBar(content: Text("数据获取成功：$userName")));
+                                 SnackBar(content: Text("数据获取成功：$userName")));
                           });
                         }),
                   ],

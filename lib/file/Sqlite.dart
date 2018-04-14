@@ -26,7 +26,6 @@ class MyApp extends StatelessWidget {
 
     Database database = await openDatabase(path, version: 1,
         onCreate: (Database db, int version) async {
-          // When creating the db, create the table
           await db.execute(
               "CREATE TABLE user (id INTEGER PRIMARY KEY, name TEXT)");
         });
@@ -39,19 +38,19 @@ class MyApp extends StatelessWidget {
       trx.rawInsert( 'INSERT INTO user(name) VALUES("$name")');
     });
   }
-
+  Future<List<Map>> get() async {
+    final db = await _localFile;
+    List<Map> list=    await db.rawQuery('SELECT * FROM user');
+    return list;
+  }
   @override
   Widget build(BuildContext context) {
-    Future<List<Map>> get() async {
-      final db = await _localFile;
-      List<Map> list=    await db.rawQuery('SELECT * FROM user');
-      return list;
-    }
+
 
     return new Builder(builder: (BuildContext context) {
       return new Scaffold(
         appBar: new AppBar(
-          title: new Text("FileOperator"),
+          title: new Text("Sqlite"),
         ),
         body: new Center(
           child: new Builder(builder: (BuildContext context) {
