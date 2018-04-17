@@ -10,7 +10,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  static const platform = const MethodChannel("samples.flutter.io/toast");
+  static const platform = const MethodChannel("com.flyou.test/android");
    showToast(String msg) async {
     try {
     await platform.invokeMethod("showToast",{"msg":msg});
