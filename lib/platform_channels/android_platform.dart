@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Future<String> getAndroidTime() async {
     var str;
     try {
-      str = await platform.invokeMethod("getAndroidText");
+      str = await platform.invokeMethod("getAndroidTime");
     } on PlatformException catch (e) {
       print(e.toString());
     }

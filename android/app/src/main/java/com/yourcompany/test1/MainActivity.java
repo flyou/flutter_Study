@@ -16,6 +16,8 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugins.GeneratedPluginRegistrant;
 
+import java.text.SimpleDateFormat;
+
 public class MainActivity extends FlutterActivity {
     private static final String CHANNEL = "com.flyou.test/android";
     private static final String NET_CHANGE_CHANNEL = "com.flyou.test/netChanged";
@@ -38,8 +40,8 @@ public class MainActivity extends FlutterActivity {
                         } else if (call.method.equals("netConnection")) {
                             boolean networkConnected = NetUtil.isNetworkConnected(getApplicationContext());
                             result.success(networkConnected);
-                        } else if (call.method.equals("getAndroidText")) {
-                            result.success("I am from Android platform");
+                        } else if (call.method.equals("getAndroidTime")) {
+                            result.success(getCurrentTime());
                         }
                     }
                 });
@@ -62,9 +64,12 @@ public class MainActivity extends FlutterActivity {
                     }
                 }
         );
+
     }
 
-
+    private String getCurrentTime(){
+        return  new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(System.currentTimeMillis());
+    }
     private BroadcastReceiver createNetStateChangeReceiver(final EventChannel.EventSink events) {
         return new BroadcastReceiver() {
             @Override
@@ -72,7 +77,7 @@ public class MainActivity extends FlutterActivity {
                 ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
                 NetworkInfo mobNetInfo = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
                 NetworkInfo wifiNetInfo = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-
+                Log.e("flyou","收到广播"+intent.getAction());
                 if (!mobNetInfo.isConnected() && !wifiNetInfo.isConnected()) {
                     Log.i("通知", "网络不可以用");
                     events.success("网络不可以用");

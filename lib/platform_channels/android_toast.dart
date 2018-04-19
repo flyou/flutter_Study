@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       child: RaisedButton(
         child: Text("点我提示"),
         onPressed: () {
-          showToast("");
+          showToast("我是android系统的toast");
         },
       ),
     ),);
