@@ -3,7 +3,7 @@
 不定期分享Flutter开发资讯与教程
 
 
-
+文章地址[https://github.com/flyou/flutter_demo](https://github.com/flyou/flutter_demo)
 
 本人时间有限，并不能保证定期更新，但是不定期更新是肯定的。<br/>
 能力有限，也不能保证写的都是对的，如有错误，请海涵指正。<br/>
@@ -57,7 +57,7 @@
 
 **2018.04.16** [网络操作](http://flutter.link/2018/04/16/%E7%BD%91%E7%BB%9C%E6%93%8D%E4%BD%9C/)
 
-**2018.04.20** [Flutter调用平台代码](http://flutter.link/2018/04/20/Flutter%E8%B0%83%E7%94%A8%E5%B9%B3%E5%8F%B0%E4%BB%A3%E7%A0%81/)
+**2018.04.20** [Flutter调用平台代码](http://flutter.link/2018/0*__*4/20/Flutter%E8%B0%83%E7%94%A8%E5%B9%B3%E5%8F%B0%E4%BB%A3%E7%A0%81/)
 
 **2018.04.21** [TabBar](http://flutter.link/2018/04/22/TabBar/)
 
