@@ -79,9 +79,9 @@ class MyFloatActionButton extends StatelessWidget {
         );
         Scaffold.of(context).showSnackBar(snackbar);
       },
-      child: new Icon(Icons.add),
-      backgroundColor: Colors.blueAccent,
-      mini: false,
+      child: new Icon(Icons.cake),
+      backgroundColor: Colors.red,
+      mini: true,
       tooltip: "点我试试效果",
     );
   }

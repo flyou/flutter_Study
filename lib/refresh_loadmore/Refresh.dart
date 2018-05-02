@@ -14,27 +14,18 @@ class MyApp extends StatefulWidget {
 }
 
 class MyAppState extends State<MyApp> {
-  List<int> items = List.generate(10, (i) => i);
-  ScrollController _scrollController = new ScrollController();
+  List<int> items = List.generate(6, (i) => i);
 
-  Future<List<int>> fakeRequest(int from, int to) async {
-    return Future.delayed(Duration(seconds: 2), () {
-      return List.generate(to - from, (i) => i + from);
-    });
-  }
   Future<Null> _handleRefresh() async {
-    
-  await  Future.delayed(Duration(seconds: 5),(){
+    await Future.delayed(Duration(seconds: 5), () {
       print('refresh');
       setState(() {
         items.clear();
-        items = List.generate(20, (i) => i);
+        items = List.generate(15, (i) => i);
         return null;
       });
     });
-
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -42,9 +33,21 @@ class MyAppState extends State<MyApp> {
       appBar: AppBar(
         title: Text("Refresh"),
       ),
-      body: new RefreshIndicator(child: ListView.builder(itemCount: items.length,itemBuilder: (context,index){
-        return ListTile(title: Text("Index$index"),);
-      },), onRefresh: _handleRefresh),
+      body: new RefreshIndicator(
+        child: ListView.builder(
+          itemCount: items.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              title: Text("Index$index"),
+            );
+          },
+        ),
+        onRefresh: _handleRefresh,
+        color: Colors.deepOrangeAccent,
+        backgroundColor: Colors.black,
+        displacement: 60.0,
+
+      ),
     );
   }
 }
