@@ -33,7 +33,7 @@ class MyAppState extends State<MyApp> {
       body: Column(
         children: <Widget>[
           LinearProgressIndicator(
-        
+        value: currentProgress,
           ),
           Padding(
             padding: const EdgeInsets.only(top: 20.0),

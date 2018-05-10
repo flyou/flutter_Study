@@ -14,14 +14,14 @@ class MyApp extends StatefulWidget {
 }
 
 class MyAppState extends State<MyApp> {
-  List<int> items = List.generate(6, (i) => i);
+  List<int> items = List.generate(16, (i) => i);
 
   Future<Null> _handleRefresh() async {
     await Future.delayed(Duration(seconds: 5), () {
       print('refresh');
       setState(() {
         items.clear();
-        items = List.generate(15, (i) => i);
+        items = List.generate(40, (i) => i);
         return null;
       });
     });
