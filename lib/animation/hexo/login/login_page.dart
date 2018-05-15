@@ -37,8 +37,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin{
     var loginButtonWidegt;
     if(isLogin) {
       AnimationController animationController=new AnimationController(vsync: this,duration: Duration(milliseconds: 2000));
-
-      AlwaysStoppedAnimation<Color> animation=new Tween(begin: Colors.white,end:Colors.black).animate(animationController);
+      Animation<Color> animation=new Tween(begin: Colors.white,end:Colors.black).animate(animationController);
       loginButtonWidegt =CircularProgressIndicator(backgroundColor: Colors.white,valueColor: animation,);
     }else{
       loginButtonWidegt = Text(
