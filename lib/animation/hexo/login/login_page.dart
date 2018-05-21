@@ -7,7 +7,6 @@ import 'package:test1/animation/hexo/login/home_page.dart';
 
 
 class LoginPage extends StatefulWidget {
-  static String tag = 'login-page';
   @override
   _LoginPageState createState() => new _LoginPageState();
 }
@@ -18,7 +17,11 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin{
 
   onLoginClick(){
    Future.delayed(Duration(seconds: 2), () {
-     Navigator.of(context).pushNamed(HomePage.tag);
+     Navigator.of(context).push(
+         new MaterialPageRoute<Null>(
+             builder: (BuildContext context) {
+               return HomePage();
+             }));
      isLogin=false;
     });
    setState(() {
@@ -28,7 +31,6 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin{
   }
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     isLogin=false;
   }
@@ -41,23 +43,22 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin{
       loginButtonWidegt =CircularProgressIndicator(backgroundColor: Colors.white,valueColor: animation,);
     }else{
       loginButtonWidegt = Text(
-          'Log In', style: TextStyle(color: Colors.white));
+          '登录', style: TextStyle(color: Colors.white));
     }
     final logo = Hero(
       tag: 'hero',
       child: CircleAvatar(
         backgroundColor: Colors.transparent,
         radius: 48.0,
-        child: Image.asset('assets/logo.png'),
+        child: Image.asset('assets/icon.png'),
       ),
     );
 
-    final email = TextFormField(
+    final userName = TextFormField(
       keyboardType: TextInputType.emailAddress,
       autofocus: false,
-      initialValue: 'alucard@gmail.com',
       decoration: InputDecoration(
-        hintText: 'Email',
+        hintText: '请输入用户名',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
       ),
@@ -65,10 +66,9 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin{
 
     final password = TextFormField(
       autofocus: false,
-      initialValue: 'some password',
       obscureText: true,
       decoration: InputDecoration(
-        hintText: 'Password',
+        hintText: '请输入密码',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
       ),
@@ -92,7 +92,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin{
 
     final forgotLabel = FlatButton(
       child: Text(
-        'Forgot password?',
+        '忘记密码?',
         style: TextStyle(color: Colors.black54),
       ),
       onPressed: () {},
@@ -107,7 +107,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin{
           children: <Widget>[
             logo,
             SizedBox(height: 48.0),
-            email,
+            userName,
             SizedBox(height: 8.0),
             password,
             SizedBox(height: 24.0),

@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  static String tag = 'home-page';
 
   @override
   Widget build(BuildContext context) {
-    final alucard = Hero(
+    final logo = Hero(
       tag: 'hero',
       child: Padding(
         padding: EdgeInsets.all(16.0),
         child: CircleAvatar(
           radius: 72.0,
           backgroundColor: Colors.transparent,
-          backgroundImage: AssetImage('assets/alucard.jpg'),
+          backgroundImage: AssetImage('assets/icon.png'),
         ),
       ),
     );
@@ -20,15 +19,15 @@ class HomePage extends StatelessWidget {
     final welcome = Padding(
       padding: EdgeInsets.all(8.0),
       child: Text(
-        'Welcome Alucard',
+        'Welcome Flutter',
         style: TextStyle(fontSize: 28.0, color: Colors.white),
       ),
     );
 
-    final lorem = Padding(
+    final text = Padding(
       padding: EdgeInsets.all(8.0),
       child: Text(
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit condimentum mauris id tempor. Praesent eu commodo lacus. Praesent eget mi sed libero eleifend tempor. Sed at fringilla ipsum. Duis malesuada feugiat urna vitae convallis. Aliquam eu libero arcu.',
+        'Flutter is Google’s mobile app SDK for crafting high-quality native interfaces on iOS and Android in record time. Flutter works with existing code, is used by developers and organizations around the world, and is free and open source.',
         style: TextStyle(fontSize: 16.0, color: Colors.white),
       ),
     );
@@ -43,7 +42,7 @@ class HomePage extends StatelessWidget {
         ]),
       ),
       child: Column(
-        children: <Widget>[alucard, welcome, lorem],
+        children: <Widget>[logo, welcome, text],
       ),
     );
 

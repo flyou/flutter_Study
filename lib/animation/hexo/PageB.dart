@@ -17,9 +17,7 @@ class PageB extends StatelessWidget {
             child: Container(
               child: Center(
                 child: SizedBox(
-                  child: CircleAvatar(
-                    backgroundColor: Colors.blue,
-                  ),
+                  child:new Image.asset("images/cover.jpg"),
                   width: 100.0,
                   height: 100.0,
                 ),

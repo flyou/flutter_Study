@@ -2,13 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:test1/animation/hexo/PageB.dart';
 
 void main() {
-  final routes = <String, WidgetBuilder>{
-    PageB.tag: (context) => PageB(),
-  };
-
   runApp(new MaterialApp(
     home: PageA(),
-    routes: routes,
     debugShowCheckedModeBanner: false,
   ));
 }
@@ -23,18 +18,22 @@ class PageA extends StatelessWidget {
         child: Align(
           alignment: Alignment.topCenter,
           child: Center(
-
             child: SizedBox(
               child: GestureDetector(
                 child: Container(
-                  color: Colors.red,
+                  child: new Image.asset("images/cover.jpg"),
                 ),
                 onTap: () {
-                  Navigator.of(context).pushNamed(PageB.tag);
+                  Navigator.of(context).push(
+                    new MaterialPageRoute<Null>(
+                        builder: (BuildContext context) {
+                      return PageB();
+                    }),
+                  );
                 },
               ),
-              width: 80.0,
-              height: 80.0,
+              width: 280.0,
+              height: 280.0,
             ),
           ),
         ),
