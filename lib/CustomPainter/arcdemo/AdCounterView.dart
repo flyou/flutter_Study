@@ -48,8 +48,8 @@ class AdCounterViewState extends State<AdCounterView>
     super.initState();
     _animationController = new AnimationController(
         vsync: this, duration: Duration(milliseconds: widget.duration));
-    _doubleAnimation =
-        new Tween(begin: 0.0, end: widget.endAngle).animate(_animationController);
+    _doubleAnimation = new Tween(begin: 0.0, end: widget.endAngle)
+        .animate(_animationController);
     _animationController.addListener(() {
       setState(() {});
     });

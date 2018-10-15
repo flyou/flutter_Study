@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-
-
+import 'dart:ui' as ui;
 
 /// ------------------------------
 /// ┌─┐┬ ┬ ┬┌─┐┬ ┬
 /// ├┤ │ └┬┘│ ││ │
-/// └  ┴─┘┴ └─┘└─┘                         
+/// └  ┴─┘┴ └─┘└─┘
 /// Author       : fzl flyou
 /// Date         : 2018/10/12 0012
 /// ProjectName  : test1
@@ -15,50 +14,53 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(new MaterialApp(
-    home: PrinterLineDemo(),
+    home: PainterDemo(),
   ));
 }
 
-class PrinterLineDemo extends StatefulWidget {
+class PainterDemo extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return PrinterArcDemoState();
+    return PainterDemoState();
   }
-
 }
 
-class PrinterArcDemoState extends State<PrinterLineDemo> {
-
+class PainterDemoState extends State<PainterDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("PrinterLineDemo"),
+        title: Text("PainterDemo"),
       ),
-      body: Center(child: CustomPaint(painter: LineArc(),size: Size(200.0, 100.0),),),
+      body: CustomPaint(
+        painter: CirclePainter(),
+      ),
     );
   }
 }
 
-class LineArc extends CustomPainter {
+class CirclePainter extends CustomPainter {
   Paint _paint = new Paint()
     ..color = Colors.blueAccent
     ..strokeCap = StrokeCap.round
     ..isAntiAlias = true
-    ..style=PaintingStyle.stroke
-
-    ..strokeWidth = 10.0;
+    ..style = PaintingStyle.stroke
+    ..strokeWidth = 5.0;
 
   @override
   void paint(Canvas canvas, Size size) {
-   Rect rect= Rect.fromCircle(center: Offset(100.0, 0.0),radius: size.width/2);
-var sweepAngle=270/180*3.14;
+    Path path = new Path();
 
-    canvas.drawCircle( Offset(100.0, 0.0), size.width/2, _paint);
-    _paint.color=Colors.amberAccent;
-    _paint.strokeWidth=7.0;
-    canvas.drawArc(rect, 0,sweepAngle,false,_paint);
+    //直线
+    path.moveTo(50, 50);
+    path.lineTo(160, 50);
+    path.lineTo(160, 160);
+    path.lineTo(50, 160);
 
+    path.moveTo(160, 105);
+    path.lineTo(50, 105);
+
+    canvas.drawPath(path, _paint);
   }
 
   @override

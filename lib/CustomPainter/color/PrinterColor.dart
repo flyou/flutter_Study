@@ -14,19 +14,19 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(new MaterialApp(
-    home: PrinterLineDemo(),
+    home: PrinterColorDemo(),
   ));
 }
 
-class PrinterLineDemo extends StatefulWidget {
+class PrinterColorDemo extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return PrinterLineDemoState();
+    return PrinterColorDemoState();
   }
 
 }
 
-class PrinterLineDemoState extends State<PrinterLineDemo> {
+class PrinterColorDemoState extends State<PrinterColorDemo> {
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class PrinterLineDemoState extends State<PrinterLineDemo> {
   }
 }
 
-class LineColor extends CustomPainter {
+ class LineColor extends CustomPainter {
   Paint _paint = new Paint()
     ..color = Colors.blueAccent
     ..strokeCap = StrokeCap.round
