@@ -96,7 +96,7 @@
 
 ## 中文教程通道
 
-**Flutter 开发者教程：**[flutter.link](http://flutter.link/ "博客地址")
+**Flutter 开发者教程：**[flutter开发者](http://flutter.link/ "博客地址")
 
 ***关注公众号及时收到新文章推送***
 
