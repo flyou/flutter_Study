@@ -41,7 +41,7 @@ class PainterDemoState extends State<PainterDemo> {
 
 class CirclePainter extends CustomPainter {
   Paint _paint = new Paint()
-    ..color = Colors.blueAccent
+    ..color = Colors.redAccent
     ..strokeCap = StrokeCap.round
     ..isAntiAlias = true
     ..style = PaintingStyle.stroke
@@ -51,8 +51,8 @@ class CirclePainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     Path path = new Path();
 
-    var width = 100;
-    var height = 150;
+    var width = 200;
+    var height = 300;
     path.moveTo(width / 2, height / 4);
     path.cubicTo((width * 6) / 7, height / 9, (width * 12) / 13,
         (height * 2) / 5, width / 2, (height * 7) / 12);

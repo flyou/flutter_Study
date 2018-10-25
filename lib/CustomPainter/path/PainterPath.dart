@@ -51,7 +51,6 @@ class CirclePainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     Path path = new Path();
 
-    //直线
     path.moveTo(50, 50);
     path.lineTo(160, 50);
     path.lineTo(160, 160);
