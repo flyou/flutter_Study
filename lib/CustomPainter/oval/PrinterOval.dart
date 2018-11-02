@@ -36,10 +36,11 @@ class PrinterOvalDemoState extends State<PrinterOvalDemo> {
       body: Container(
         child: CustomPaint(
           painter: OvalPainter(new Paint()
-            ..color = Colors.lightGreenAccent
+            ..color = Colors.redAccent
             ..strokeCap = StrokeCap.round
             ..isAntiAlias = true
-            ..strokeWidth = 15.0),
+            ..style=PaintingStyle.stroke
+            ..strokeWidth = 5.0),
         ),
       ),
     );
@@ -55,13 +56,13 @@ class OvalPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
 
 
-    Rect rect1= Rect.fromPoints(Offset(20.0, 20.0), Offset(100.0, 80.0));
+    Rect rect1= Rect.fromPoints(Offset(50.0, 50.0), Offset(130.0, 100.0));
     canvas.drawOval(rect1, _paint);
 
-    Rect rect2= Rect.fromPoints(Offset(20.0, 120.0), Offset(100.0, 280.0));
+    Rect rect2= Rect.fromPoints(Offset(50.0, 150.0), Offset(130.0, 300.0));
     canvas.drawOval(rect2, _paint);
 
-    Rect rect3= Rect.fromPoints(Offset(20.0, 300.0), Offset(100.0, 380.0));
+    Rect rect3= Rect.fromPoints(Offset(50.0, 320.0), Offset(130.0, 400.0));
     canvas.drawOval(rect3, _paint);
   }
 

@@ -36,10 +36,10 @@ class PrinterOvalDemoState extends State<PrinterOvalDemo> {
       body: Container(
         child: CustomPaint(
           painter: OvalPainter(new Paint()
-            ..color = Colors.lightGreenAccent
+            ..color = Colors.redAccent
             ..strokeCap = StrokeCap.round
             ..isAntiAlias = true
-            ..style=PaintingStyle.stroke
+            ..style = PaintingStyle.stroke
             ..strokeWidth = 5.0),
         ),
       ),
@@ -55,22 +55,13 @@ class OvalPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
 
+    Rect rect4 = Rect.fromCircle(center: Offset(100.0, 100.0), radius: 60.0);
+    Rect rect5 = Rect.fromCircle(center: Offset(100.0, 100.0), radius: 40.0);
 
-//    Rect rect1= Rect.fromPoints(Offset(20.0, 20.0), Offset(100.0, 80.0));
-//    canvas.drawOval(rect1, _paint);
-//
-//    Rect rect2= Rect.fromPoints(Offset(20.0, 120.0), Offset(100.0, 280.0));
-//    canvas.drawOval(rect2, _paint);
-//
-//    Rect rect3= Rect.fromPoints(Offset(20.0, 300.0), Offset(100.0, 380.0));
-//    canvas.drawOval(rect3, _paint);
-
-    Rect rect4= Rect.fromCircle(center: Offset(100.0, 100.0),radius:  60.0);
-    Rect rect5= Rect.fromCircle(center: Offset(100.0, 100.0),radius:  40.0);
-
-  RRect rRectOut=  RRect.fromRectAndRadius(rect4, Radius.circular(60.0));
-  RRect rRectInner=  RRect.fromRectAndRadius(rect5, Radius.circular(40.0));
+    RRect rRectOut = RRect.fromRectAndRadius(rect4, Radius.circular(60.0));
+    RRect rRectInner = RRect.fromRectAndRadius(rect5, Radius.circular(40.0));
     canvas.drawDRRect(rRectOut, rRectInner, _paint);
+
   }
 
   @override

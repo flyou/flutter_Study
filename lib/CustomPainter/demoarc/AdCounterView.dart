@@ -38,7 +38,7 @@ class AdCounterView extends StatefulWidget {
 
 class AdCounterViewState extends State<AdCounterView>
     with SingleTickerProviderStateMixin {
-  AdCounterViewState();
+
 
   Animation<double> _doubleAnimation;
   AnimationController _animationController;

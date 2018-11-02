@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter/material.dart';
@@ -42,14 +44,20 @@ class PrinterLineDemoState extends State<PrinterLineDemo> {
 
 class LinePainter extends CustomPainter {
   Paint _paint = new Paint()
-    ..color = Colors.blueAccent
+    ..color = Colors.redAccent
     ..strokeCap = StrokeCap.round
     ..isAntiAlias = true
-    ..strokeWidth = 15.0;
+    ..strokeWidth = 5.0;
 
   @override
   void paint(Canvas canvas, Size size) {
     canvas.drawLine(Offset(20.0, 20.0), Offset(100.0, 100.0), _paint);
+    canvas.drawLine(Offset(100, 100),Offset(100.0, 200.0), _paint);
+    canvas.drawLine(Offset(100.0, 200.0),Offset(200.0, 200.0), _paint);
+    canvas.drawLine(Offset(200.0, 200.0),Offset(200.0, 100.0), _paint);
+    canvas.drawLine(Offset(200.0, 100.0),Offset(280.0, 20.0), _paint);
+    canvas.drawLine(Offset(20.0, 20.0),Offset(280.0, 20.0), _paint);
+
   }
 
   @override
